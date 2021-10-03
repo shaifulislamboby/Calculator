@@ -9,8 +9,10 @@ class ApiTests(APITestCase):
         self.calculator_endpoint = reverse('calculator-endpoint')
         self.expression_ = '?expression=1*(44*99)'
         self.expression__ = '?expression=3+33'
-        self.calculator_response = self.client.get(self.calculator_endpoint + self.expression_, format='json')
-        self.calculator_response_ = self.client.get(self.calculator_endpoint + self.expression__, format='json')
+        self.calculator_response = self.client.get(self.calculator_endpoint +
+                                                   self.expression_, format='json')
+        self.calculator_response_ = self.client.get(self.calculator_endpoint +
+                                                    self.expression__, format='json')
 
     def test_calculator_endpoint(self):
         """
