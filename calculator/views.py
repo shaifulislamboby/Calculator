@@ -5,7 +5,8 @@ from . import scripts
 
 class Calculate(APIView):
     """
-    Calculate view will be used for calculating the result, and then it will return the result in json
+    Calculate view will be used for calculating the result,
+    and then it will return the result in json
     format to the user.
     """
 

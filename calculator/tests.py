@@ -10,16 +10,20 @@ class ApiTests(APITestCase):
         self.expression_ = '?expression=1*(44*99)'
         self.expression__ = '?expression=3+33'
         self.calculator_response = self.client.get(self.calculator_endpoint +
-                                                   self.expression_, format='json')
+                                                   self.expression_,
+                                                   format='json')
         self.calculator_response_ = self.client.get(self.calculator_endpoint +
-                                                    self.expression__, format='json')
+                                                    self.expression__,
+                                                    format='json')
 
     def test_calculator_endpoint(self):
         """
         Ensure we can encode a new url.
         """
-        self.assertEqual(self.calculator_response.status_code, status.HTTP_200_OK)
-        self.assertEqual(self.calculator_response.json()['expression'], '1*(44*99)')
+        self.assertEqual(self.calculator_response.status_code,
+                         status.HTTP_200_OK)
+        self.assertEqual(self.calculator_response.json()['expression'],
+                         '1*(44*99)')
         self.assertEqual(self.calculator_response.json()['result'], 4356)
 
     def test_decode_url(self):
@@ -27,6 +31,8 @@ class ApiTests(APITestCase):
         Ensure we can decode a new url.
         """
 
-        self.assertEqual(self.calculator_response_.status_code, status.HTTP_200_OK)
-        self.assertEqual(self.calculator_response_.json()['expression'], '3+33')
+        self.assertEqual(self.calculator_response_.status_code,
+                         status.HTTP_200_OK)
+        self.assertEqual(self.calculator_response_.json()['expression'],
+                         '3+33')
         self.assertEqual(self.calculator_response_.json()['result'], 36)
