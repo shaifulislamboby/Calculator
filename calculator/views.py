@@ -17,7 +17,8 @@ class Calculate(APIView):
         result = 0
         try:
             expression = request.build_absolute_uri().split('=')[-1]
-        except:
+        except Exception as e:
+            print(e)
             expression = "Please enter a valid expression"
 
         if expression:
