@@ -8,6 +8,7 @@ django = "*"
 djangorestframework = "*"
 python-decouple = "*"
 requests = "*"
+pycodestyle = "*"
 
 [dev-packages]
 
