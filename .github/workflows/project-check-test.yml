@@ -1,0 +1,33 @@
+name: Calculator CI/CD Workflow
+
+# triggers
+on:
+
+  pull_request:
+    branches:
+      - develop
+      - master
+  push:
+    branches:
+      - master
+      - develop
+
+
+jobs:
+  health-check-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code # checking our the code at current commit that triggers the workflow
+        uses: actions/checkout@v2
+      - name: Setup python environment # setting python environment to 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3
+      - name: Check Python version # checking the python version to see if 3.x is installed.
+        run: python --version
+      - name: Install requirements # install application requirements
+        run: pip install --upgrade pip git+https://github.com/pypa/pipenv
+      - name: Check Syntax # check code formatting
+        run: pycodestyle --statistics .
+      - name: Run Test # running tests
+        run: python manage.py test
