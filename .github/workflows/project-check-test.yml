@@ -36,6 +36,6 @@ jobs:
           pipenv install --dev
 
       - name: Check Syntax # check code formatting
-        run: pipenv run pycodestyle --statistics .
+        run: pipenv run pycodestyle --max-line-length=120 --statistics .
       - name: Run Test # running tests
         run: pipenv run python manage.py test
