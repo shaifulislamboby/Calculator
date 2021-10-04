@@ -2,7 +2,7 @@
 
 ---
 
-This is a repository for test from FinnAuto.
+This is a repository for test from MOQO
 
 # How To
 
