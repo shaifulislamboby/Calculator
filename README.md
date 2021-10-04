@@ -2,7 +2,7 @@
 
 ---
 
-This is a repository for test from MOQO
+This is a repository for test from MOQO.
 
 # How To
 
