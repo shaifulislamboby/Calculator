@@ -12,8 +12,8 @@ class CalculateFromExpression:
 
     def calculate(self, expression):
         """
-        Time    O(n)
-        Space   O(n)
+        Time    O(n) -- linear time
+        Space   O(n) -- linear space
         """
         array = []
         for value in expression:

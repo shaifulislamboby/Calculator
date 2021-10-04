@@ -18,7 +18,7 @@ class ApiTests(APITestCase):
 
     def test_calculator_endpoint(self):
         """
-        Ensure we can encode a new url.
+        Ensure the endpoint is working properly.
         """
         self.assertEqual(self.calculator_response.status_code,
                          status.HTTP_200_OK)
@@ -26,9 +26,9 @@ class ApiTests(APITestCase):
                          '1*(44*99)')
         self.assertEqual(self.calculator_response.json()['result'], 4356)
 
-    def test_decode_url(self):
+    def test_for_larger_expression(self):
         """
-        Ensure we can decode a new url.
+        Ensure we can have large expression with plus sign
         """
 
         self.assertEqual(self.calculator_response_.status_code,
